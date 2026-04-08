@@ -1,34 +1,50 @@
-# 🌍 Sistema de Cadastro de Funcionários
+# Mini Sistema Web - Cadastro de Funcionários
 
-Mini sistema web desenvolvido para gerenciar o cadastro e a listagem de funcionários de uma empresa. O projeto conta com autenticação simples e foi construído sem o uso de frameworks, focando nos fundamentos do desenvolvimento web e arquitetura de pastas organizada.
+Projeto em **PHP5 + PostgreSQL**, sem frameworks, com:
 
-## 🚀 Funcionalidades
+- autenticação simples;
+- cadastro de funcionários;
+- edição, visualização e exclusão;
+- listagem com busca e paginação.
 
-- **Autenticação:** Login de usuário com validação no banco de dados.
-- **Cadastro de Funcionários:** Formulário completo para inserção de novos colaboradores (Nome, Cargo, E-mail, Telefone e Situação).
-- **Listagem e Busca:** Tabela dinâmica listando todos os funcionários cadastrados, com barra de pesquisa integrada para filtrar por nome.
-- **Design Fiel:** Interface construída com CSS puro para replicar fielmente o design de referência.
+## Estrutura
 
-## 🛠️ Tecnologias Utilizadas
+- `index.php` -> tela de login
+- `login.php` -> valida autenticação
+- `logout.php` -> encerra sessão
+- `cadastro.php` -> formulário de cadastro/edição
+- `salvar.php` -> grava no banco
+- `listagem.php` -> busca e lista funcionários
+- `visualizar.php` -> exibe detalhes
+- `excluir.php` -> exclui registro
+- `conexao.php` -> conexão com PostgreSQL
+- `database.sql` -> script do banco
+- `assets/css/estilo.css` -> estilos
 
-- **Front-end:** HTML5, CSS3 (Puro) e FontAwesome (para ícones).
-- **Back-end:** PHP 5 (Estruturado).
-- **Banco de Dados:** PostgreSQL (comunicação via PDO).
+## Configuração
 
-## 📁 Estrutura do Projeto
+1. Crie o banco no PostgreSQL.
+2. Execute o arquivo `database.sql`.
+3. Ajuste usuário, senha, host e nome do banco em `conexao.php`.
+4. Coloque a pasta do projeto dentro do servidor local (ex.: `htdocs` do XAMPP).
+5. Acesse `http://localhost/mini_sistema_funcionarios/`.
 
-O projeto foi organizado separando as responsabilidades para facilitar a manutenção:
+## Login padrão
 
-```text
-sistema-funcionarios/
-├── auth/
-│   └── login.php         # Tela e lógica de autenticação
-├── css/
-│   └── style.css         # Estilos globais e das telas
-├── db/
-│   └── conexao.php       # Configuração do PDO com o PostgreSQL
-├── funcionarios/
-│   ├── cadastro.php      # Tela e lógica de inserção
-│   └── listagem.php      # Tela e lógica de exibição/busca
-├── index.php             # Ponto de entrada (redireciona para o login)
-└── README.md
+- **Usuário:** `admin`
+- **Senha:** `123456`
+
+## Git e GitHub
+
+```bash
+git init
+git add .
+git commit -m "Projeto cadastro de funcionários em PHP5 e PostgreSQL"
+git branch -M main
+git remote add origin SEU_LINK_DO_REPOSITORIO
+git push -u origin main
+```
+
+## Observação
+
+A autenticação usa `md5` apenas por exigência de simplicidade e compatibilidade com PHP5. Em projeto real, isso já nasce errado.
